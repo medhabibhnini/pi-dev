@@ -1,58 +1,77 @@
 
-{% extends 'backoffice.html.twig' %}
-
-{% block content %}
 
 
+    {% extends 'backoffice.html.twig' %}
+
+    {% block title %}Liste de Blog{% endblock %}
+
+    {% block content %}
 
 
+        <html>
+        <head>
+            <title></title>
+        </head>
 
-<div class="content">
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="card strpied-tabled-with-hover">
-                    <div class="card-header ">
-                        <h4 class="card-title">Listes des Blogs</h4>
-                        <p class="card-category"></p>
-                    </div>
-                    <div class="card-body table-full-width table-responsive">
-                <table class="table table-hover table-striped">
+        <div class="limiter">
+            <div class="container">
+                <div class="container">
+                    <table id="livre" border="1">
+                        <thead>
+                        <th>Sujet</th>
+                        <th>Description</th>
+                        <th>Image</th>*
+                        <th>Action</th>
 
-                    <thead>
-                    <th>Sujet</th>
-                    <th>Description</th>
-                    <th>Image</th>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            {% for u in re %}
+                            <td>
+                                {{ u.sujet}}
+                            </td>
+                            <td>
+                                {{ u.description}}
+                            </td>
+                            <td>
+                                <img src="{{ asset('images/')~u.type }}" width="50">
 
-                    </thead>
-                    <tr>
-                        {% for u in re %}
-                        <td>
-                            {{ u.sujet}}
-                        </td>
-                        <td>
-                            {{ u.description}}
-                        </td>
-                        <td>
-                            <img src="{{ asset('images/')~u.type }}" width="50">
+                            </td>
 
-                        </td>
+                            <td>
+                                <a href="{{ path('Blog_delete', { 'id': u.idb }) }}"><i class="fa fa-minus-circle"></i> delete Blog</a>
+                            </td>
 
-                        <td>
-                            <a href="{{ path('Blog_delete', { 'id': u.idb }) }}"><i class="fa fa-minus-circle"></i> delete Blog</a>
-                        </td>
+                        </tr>
+                        {% endfor %}
+                        </tbody>
 
-                    </tr>
-{% endfor %}
-
-
-
-
-
-                </table>
-
-                    </div>
+                    </table>
                 </div>
+
+                <br>
+                <br>
+                <br><br><br><br><br><br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br><br><br><br><br><br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+                <br>
+
+
             </div>
+        </div>
+
+        </html>
+
+
 
 {% endblock content %}

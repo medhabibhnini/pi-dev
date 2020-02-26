@@ -37,12 +37,7 @@
                 </a>
             </div>
             <ul class="nav">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{{ path('backoffice') }}">
-                        <i class="nc-icon nc-chart-pie-35"></i>
-                        <p>Acceuil</p>
-                    </a>
-                </li>
+
                 <ul class="nav">
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
@@ -60,47 +55,83 @@
                 <ul class="nav">
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <i class="nc-icon nc-notes"></i><p>commande&livraison</p>
+                            <i class="nc-icon nc-notes"></i><p>commande/livraison</p>
 
                         </a>
                         <ul class="dropdown-menu">
-                            <a class="dropdown-item" href="{{ path('backshowcommande') }}">liste commande</a>
-                            <a class="dropdown-item" href="{{ path('showlivraison') }}">liste livraison</a>
+                            <a class="dropdown-item" href="{{ path('backshowcommande') }}">Liste commande</a>
+                            <a class="dropdown-item" href="{{ path('showlivraison') }}">Liste livraison</a>
                         </ul>
                     </li>
 
                 </ul>
-                <li>
-                    <a class="nav-link" href="./typography.html">
-                        <i class="nc-icon nc-paper-2"></i>
-                        <p>Typography</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="./icons.html">
-                        <i class="nc-icon nc-atom"></i>
-                        <p>Icons</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="./maps.html">
-                        <i class="nc-icon nc-pin-3"></i>
-                        <p>Maps</p>
-                    </a>
-                </li>
-                <li>
-                    <a class="nav-link" href="./notifications.html">
-                        <i class="nc-icon nc-bell-55"></i>
-                        <p>Notifications</p>
-                    </a>
-                </li>
-                <li class="nav-item active active-pro">
-                    <a class="nav-link active" href="upgrade.html">
-                        <i class="nc-icon nc-alien-33"></i>
-                        <p>Upgrade to PRO</p>
-                    </a>
-                </li>
-            </ul class="nav">
+                <ul class="nav">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="nc-icon nc-notes"></i><p>Blog</p>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('Blog_addBlog') }}">Ajouter Blog</a>
+                            <a class="dropdown-item" href="{{ path('Blog_affichageB') }}">Liste Blog</a>
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="nav">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="nc-icon nc-notes"></i><p>Forum</p>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('publication_affiche') }}">Liste Forum</a>
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="nav">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="nc-icon nc-notes"></i><p>Service</p>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('service_addService') }}">Ajouter service</a>
+                            <a class="dropdown-item" href="{{ path('service_affichage') }}">Liste service</a>
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="nav">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="nc-icon nc-notes"></i><p>Reclamation</p>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('reclamation_affichage') }}">Liste Reclamation</a>
+                        </ul>
+                    </li>
+
+                </ul>
+                <ul class="nav">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="nc-icon nc-notes"></i><p>Divers</p>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('offreback') }}">Offre</a>
+                            <a class="dropdown-item" href="{{ path('evenement_index') }}">Event</a>
+                        </ul>
+
+                    </li>
+
+                </ul>
+
+
+
         </div>
     </div>
     <div class="main-panel">
@@ -240,6 +271,7 @@
 <script src="{{ asset('assets/js/light-bootstrap-dashboard.js?v=2.0.0 ') }}" type="text/javascript"></script>
 <!-- Light Bootstrap Dashboard DEMO methods, don't include it in your project! -->
 <script src="{{ asset('assets/js/demo.js') }}"></script>
+<script src="{{ asset('base/js/sweetalert.js') }}"></script>
 <script type="text/javascript">
     $(document).ready(function() {
         // Javascript method's body can be found in assets/js/demos.js

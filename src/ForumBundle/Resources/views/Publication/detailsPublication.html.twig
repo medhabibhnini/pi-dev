@@ -2,55 +2,86 @@
 {% extends 'backoffice.html.twig' %}
 
 {% block content %}
-
-<div class="content">
-    <div class="container-fluid">
+<br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+    <br>
+<div>
+    <div class="container">
         <div class="row">
-            <div class="col-md-12">
-                <div class="card strpied-tabled-with-hover">
+            <div>
+                <div>
                     <div class="card-header ">
-                       <h4 class="card-title">{{ pub.typep }}</h4>
+
 
                     </div>
-                    <div class="card-body table-full-width table-responsive">
-                        <table class="table table-hover table-striped">
+                    <div >
+                        <table>
 
                             <tbody>
+                            <thead>
+                            <th>
+                                <h4 class="card-title">{{ pub.typep }}</h4>
+                            </th>
+                            <th>
 
+                            </th>
+                            <th></th>
+
+                            </th><th>
+
+                            </th><th>
+
+
+
+
+
+
+                            </thead>
                             <tr>
+                            <td></td>
                                 <td></td>
                                 <td></td>
+
                                 <td></td>
                                <td width="400">
 
-                                   <img src="{{ asset('images/')~pub.image }}" width="400">
+                                   <img src="{{ asset('images/')~pub.image }}" width="250">
                                </td>
-                                <td></td>
+
                             </tr>
                             <tr>
                                 <td></td>
                                 <td></td>
+
                                 <td></td>
+                                <td></td>
+
+
                                 <td>
                                     {{ pub.descriptionp }}
                                 </td>
-                                <td></td>
+
                             </tr>
 
                             <tr>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td style="text-color: #062c33"><p>Liste des Commentaires :</p></td>
-                                <td></td>
+
+
+
                             </tr>
                             {% for c in comment %}
                             <tr>
-                                <td></td>
+                                <td style="text-color: #062c33"><p>Liste des Commentaires :        </p></td>
 
-                                <td><p>{{ c.idUser.nom }}</p></td>
-                                <td><p>{{ c.descriptionc }}</p></td>
-                                <td width="200"><p>{{ c.datec|date }}</p></td>
+                                <td><p>nom: {{ c.idUser.nom }}</p></td>
+                                <td><p>description: {{ c.descriptionc }}</p></td>
+                                <td width="200"><p>date: {{ c.datec|date }}</p></td>
                                 <td> <p><a href="{{ path('commentaire_supp', { 'id': c.idc }) }}"><i class="fa fa-minus-circle"></i> supprimer</a></p></td>
 
                             </tr>

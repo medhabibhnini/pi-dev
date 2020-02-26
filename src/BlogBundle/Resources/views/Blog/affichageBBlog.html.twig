@@ -1,0 +1,58 @@
+
+{% extends 'backoffice.html.twig' %}
+
+{% block content %}
+
+
+
+
+
+<div class="content">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card strpied-tabled-with-hover">
+                    <div class="card-header ">
+                        <h4 class="card-title">Listes des Blogs</h4>
+                        <p class="card-category"></p>
+                    </div>
+                    <div class="card-body table-full-width table-responsive">
+                <table class="table table-hover table-striped">
+
+                    <thead>
+                    <th>Sujet</th>
+                    <th>Description</th>
+                    <th>Image</th>
+
+                    </thead>
+                    <tr>
+                        {% for u in re %}
+                        <td>
+                            {{ u.sujet}}
+                        </td>
+                        <td>
+                            {{ u.description}}
+                        </td>
+                        <td>
+                            <img src="{{ asset('images/')~u.type }}" width="50">
+
+                        </td>
+
+                        <td>
+                            <a href="{{ path('Blog_delete', { 'id': u.idb }) }}"><i class="fa fa-minus-circle"></i> delete Blog</a>
+                        </td>
+
+                    </tr>
+{% endfor %}
+
+
+
+
+
+                </table>
+
+                    </div>
+                </div>
+            </div>
+
+{% endblock content %}

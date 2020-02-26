@@ -1,0 +1,83 @@
+{% extends 'backoffice.html.twig' %}
+
+{% block content %}
+
+
+        {{ form_start(form) }}
+        <div class="container">
+        <table>
+            <thead>
+            <th>
+                modifier un livre
+            </th>
+            </thead>
+            <tr>
+                <td>
+                    {{ form_label(form.nomlivre,"Nom du livre:") }}
+                </td>
+                <td>
+                    {{ form_widget(form.nomlivre) }}
+                </td>
+            </tr>
+
+            <tr>
+                <td>
+                    {{ form_label(form.auteurlivre,"L'auteur:") }}
+                </td>
+                <td>
+                    {{ form_widget(form.auteurlivre) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_label(form.datelivre,"Date de publication:") }}
+                </td>
+                <td>
+                    {{ form_widget(form.datelivre) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_label(form.prixlivre,"prix du livre:") }}
+                </td>
+
+                <td>
+                    {{ form_widget(form.prixlivre) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_label(form.contenu,"contenu livre:") }}
+                </td>
+
+                <td>
+                    {{ form_widget(form.contenu) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_label(form.quantitelivre,"quantite:") }}
+                </td>
+
+                <td>
+                    {{ form_widget(form.quantitelivre) }}
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    {{ form_label(form.imageFile,"image:") }}
+                </td>
+
+                <td>
+                    {{ form_widget(form.imageFile) }}
+                </td>
+            </tr>
+
+
+        </table>
+               <div class="button_cont" align="center"><input type="submit" value="modifier" class="example_b"></div>
+    {{ form_end(form) }}
+
+
+
+{% endblock content %}

@@ -1,0 +1,36 @@
+
+{% extends 'base.html.twig' %}
+
+{% block content %}
+
+
+    <section class="ftco-section ftco-no-pt ftco-no-pb contact-section">
+        <div class="container">
+            <div class="row d-flex align-items-stretch no-gutters">
+                <div class="col-md-6 p-4 p-md-5 order-md-last bg-light">
+                    {{ form_start(form) }}
+                    <div><h1>Attestation</h1></div>
+
+                    <div class="form-group" >
+                        Type d'attestation:
+                        {{ form_widget(form.typea,{'attr': {'class': "ckeditor",'placeholder': "Type",'required':"true",'cols':'30'}}) }}
+                    </div>
+                    <div class="form-group">
+                        langue:
+                        {{ form_widget(form.langue,{'attr': {'class': "ckeditor",'placeholder': "Langue",'required':"true",'cols':'30','rows':'7'}}) }}
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" value="Send " class="btn btn-primary py-3 px-5">
+                    </div>
+
+    {{ form_end(form) }}
+                </div>
+                <div class="col-md-6 d-flex align-items-stretch">
+                    <img src="{{ asset('bundles/image/r.png') }}" style="width: 400px" />
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+{% endblock content %}

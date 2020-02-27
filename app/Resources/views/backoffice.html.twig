@@ -32,8 +32,8 @@
 -->
         <div class="sidebar-wrapper">
             <div class="logo">
-                <a href="http://www.creative-tim.com" class="simple-text">
-                    Creative Tim
+                <a href="{{ path('backoffice') }}" class="simple-text">
+                    Home
                 </a>
             </div>
             <ul class="nav">
@@ -55,7 +55,7 @@
                 <ul class="nav">
                     <li class="dropdown nav-item">
                         <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
-                            <i class="nc-icon nc-notes"></i><p>commande/livraison</p>
+                            <i class="nc-icon nc-notes"></i><p>com&liv</p>
 
                         </a>
                         <ul class="dropdown-menu">
@@ -124,6 +124,20 @@
                         <ul class="dropdown-menu">
                             <a class="dropdown-item" href="{{ path('offreback') }}">Offre</a>
                             <a class="dropdown-item" href="{{ path('evenement_index') }}">Event</a>
+                        </ul>
+
+                    </li>
+
+                </ul>
+                <ul class="nav">
+                    <li class="dropdown nav-item">
+                        <a href="#" class="dropdown-toggle nav-link" data-toggle="dropdown">
+                            <i class="nc-icon nc-notes"></i><p>cours</p>
+
+                        </a>
+                        <ul class="dropdown-menu">
+                            <a class="dropdown-item" href="{{ path('affichagecoursadmin') }}">Gestion cours</a>
+                            <a class="dropdown-item" href="{{ path('affichageformationadmin') }}">gestion formation</a>
                         </ul>
 
                     </li>
@@ -277,7 +291,7 @@
         // Javascript method's body can be found in assets/js/demos.js
         demo.initDashboardPageCharts();
 
-        demo.showNotification();
+
 
     });
 </script>

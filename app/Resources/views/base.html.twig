@@ -19,6 +19,7 @@
         <link rel="stylesheet" href="{{ asset('base/css/flaticon.css') }}">
         <link rel="stylesheet" href="{{ asset('base/css/icomoon.css') }}">
         <link rel="stylesheet" href="{{ asset('base/css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('stripecss/stripe.css') }} ">
     {% endblock stylesheets %}
 </head>
 <body>
@@ -93,7 +94,7 @@
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active"><a href={{ path('homepage') }} class="nav-link pl-0">Home</a></li>
                     <li class="nav-item"><a href="{{ path('frontshowlivre') }}" class="nav-link">Bibliothéque</a></li>
-                    <li class="nav-item"><a href="courses.html" class="nav-link">Cours&Formation</a></li>
+                    <li class="nav-item"><a href="{{ path('frontshowcours') }}" class="nav-link">Cours&Formation</a></li>
                     <li class="nav-item"> <div class="col-md topper d-flex align-items-center justify-content-end">
                             <ul class="navbar-nav ml-auto">
                                 <li class="nav-item dropdown">
@@ -245,7 +246,6 @@
     <script src="{{ asset('base/js/aos.js') }}"></script>
     <script src="{{ asset('base/js/jquery.animateNumber.min.js') }}"></script>
     <script src="{{ asset('base/js/scrollax.min.js') }}"></script>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
     <script src="{{ asset('base/js/google-map.js') }}"></script>
     <script src="{{ asset('base/js/main.js') }}"></script>
     <script src="{{ asset('base/js/sweetalert.js') }}"></script>

@@ -4,26 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>{% block title %}InGen school!{% endblock %}</title>
+    {% block stylesheets %}
+        <link rel="stylesheet" href="{{ asset('base/css/open-iconic-bootstrap.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('base/css/animate.css') }}">
 
-    <link href="{{ asset('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800,900&display=swap') }}" rel="stylesheet">
+        <link rel="stylesheet" href="{{ asset('base/css/owl.carousel.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('base/css/owl.theme.default.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('base/css/magnific-popup.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/open-iconic-bootstrap.min.css') }} ">
-    <link rel="stylesheet" href="{{ asset('css/animate.css') }}">
+        <link rel="stylesheet" href="{{ asset('base/css/aos.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/owl.carousel.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/owl.theme.default.min.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/magnific-popup.css') }}">
+        <link rel="stylesheet" href="{{ asset('base/css/ionicons.min.css') }}">
 
-    <link rel="stylesheet" href="{{ asset('css/aos.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('css/ionicons.min.css') }}">
-
-    <link rel="stylesheet" href="{{ asset('css/flaticon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/icomoon.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" type="text/css" href="{{ asset('acss/styles.css') }}"  />
-    <link rel="stylesheet" type="text/css" href="{{ asset('acss/demo.css') }}"  />
-
+        <link rel="stylesheet" href="{{ asset('base/css/flaticon.css') }}">
+        <link rel="stylesheet" href="{{ asset('base/css/icomoon.css') }}">
+        <link rel="stylesheet" href="{{ asset('base/css/style.css') }}">
+    {% endblock stylesheets %}
 </head>
 <body>
 
@@ -36,7 +32,7 @@
         <div class="container">
             <div class="row no-gutters d-flex align-items-center align-items-stretch">
                 <div class="col-md-4 d-flex align-items-center py-4">
-                    <a class="navbar-brand" href="">Fox. <span>University</span></a>
+                    <a class="navbar-brand" href="">INGEN. <span>school</span></a>
                 </div>
                 <div class="col-lg-8 d-block">
                     <div class="row d-flex">
@@ -86,8 +82,7 @@
             </form>
             <div class="collapse navbar-collapse" id="ftco-nav">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active"><a href="{{ path('homepage') }}" class="nav-link pl-0">Home </a></li>
-                    <li class="nav-item"><a href="{{ path('frontshowlivre') }}" class="nav-link">Bibliothéque</a></li>
+                    <li class="nav-item active"><a href="#" class="nav-link pl-0">Home </a></li>
          
                 </ul>
             </div>

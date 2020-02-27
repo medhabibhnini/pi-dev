@@ -4,15 +4,9 @@
 {% block content %}
     <h1 style="text-align: center;">Gestion des cours</h1>
 
-    <u1>
 
-        <div>
 
-            <h4 style="text-align: center;">
-                <button class="nav-item" ><a href="{{ path('etudes') }}" >Accueil</a></button>
-            </h4>
 
-        </div>
 
                     <div>
                         <h3 class="card-title"  ><font color="#00bfff">Liste des cours :</font></h3>
@@ -22,7 +16,7 @@
 
 
 
-<div>
+<div class="container">
 
                                 <table  >
                                     <tr>
@@ -55,16 +49,19 @@
                                                 <a href="{{ asset('Uploads/CoursPDF/') }}{{ Cours.PDFName }}" class="btn btn btn-success" />Voir le PDF</a>
                                             </td>
                                         </tr>
+
                                     {% endfor %}
+
                                 </table>
 </div>
-        <div>
-                                <h4>
-                                    <button class="nav-item"><a href="{{ path('ajoutcours') }}" >Ajouter</a></button>
-                                </h4>
-        </div>
 
-    </u1>
+
+
+
+            <h4>
+                <button class="nav-item"><a href="{{ path('ajoutcours') }}" >Ajouter</a></button>
+            </h4>
+
 
 
 

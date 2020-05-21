@@ -29,3 +29,28 @@ publication_details:
 publication_chart:
     path:   /chart
     defaults: {_controller: ForumBundle:Forum:chart }
+
+supp_pub_mobile:
+    path:   /supprimerPubMobile
+    defaults: {_controller: ForumBundle:Forum:SupprimerPubMobile }
+
+supp_com_mobile:
+    path:   /supprimerComMobile
+    defaults: {_controller: ForumBundle:Forum:SupprimerComMobile }
+
+ajout_pub_mobile:
+    path:   /ajouterPubMobile
+    defaults: {_controller: ForumBundle:Forum:AjouterPubMobile }
+
+ajout_com_mobile:
+    path:   /ajouterComMobile
+    defaults: {_controller: ForumBundle:Forum:AjouterComMobile }
+
+
+afficher_com_pub_mobile:
+    path:   /affichercp
+    defaults: {_controller: ForumBundle:Forum:AfficherComPubMobile }
+
+afficher_pub_mobile:
+    path:   /afficherp
+    defaults: {_controller: ForumBundle:Forum:AfficherPubMobile }

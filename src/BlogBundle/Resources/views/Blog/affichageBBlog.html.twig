@@ -20,7 +20,7 @@
                         <thead>
                         <th>Sujet</th>
                         <th>Description</th>
-                        <th>Image</th>*
+                        <th>Image</th>
                         <th>Action</th>
 
                         </thead>
@@ -39,8 +39,9 @@
                             </td>
 
                             <td>
-                                <a href="{{ path('Blog_delete', { 'id': u.idb }) }}"><i class="fa fa-minus-circle"></i> delete Blog</a>
+                                <a href="{{ path('Blog_delete',{'idb':u.idb}) }}"><i class="fa fa-minus-circle"></i> delete Blog</a>
                             </td>
+
 
                         </tr>
                         {% endfor %}

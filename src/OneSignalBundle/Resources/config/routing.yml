@@ -5,3 +5,7 @@ one_signal_homepage:
 Buyfront:
     path:     /notif
     defaults: { _controller: OneSignalBundle:Default:Buyfront }
+
+BuyMobile:
+    path:     /notifMobile
+    defaults: { _controller: OneSignalBundle:Default:BuyMobile }

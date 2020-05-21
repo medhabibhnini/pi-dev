@@ -3,6 +3,7 @@
 namespace MyBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Constraints\Date;
 
 /**
  * Publication
@@ -55,14 +56,14 @@ class Publication
     /**
      * @var \DateTime
      *
-     * @ORM\Column(name="datep", type="date", nullable=false)
+     * @ORM\Column(name="datep", type="datetime", nullable=false)
      */
     private $datep;
 
 
+
     /**
      * Get id
-     *
      * @return integer
      */
     public function getId()
@@ -190,4 +191,3 @@ class Publication
         return $this->datep;
     }
 }
-

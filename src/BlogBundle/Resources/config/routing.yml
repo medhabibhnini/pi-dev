@@ -23,3 +23,7 @@ Blog_sort:
     path:     /sort/{sort}
     defaults: { _controller: BlogBundle:Blog:sort }
     methods:  GET
+
+affichage_mobile_blog:
+    path:     /afficher
+    defaults: { _controller: BlogBundle:Blog:affichageMobile }

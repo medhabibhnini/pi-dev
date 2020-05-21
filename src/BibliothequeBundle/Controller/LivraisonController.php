@@ -15,10 +15,11 @@ class LivraisonController extends Controller
     {
         $user=$this->getUser();
         $u=$this->getDoctrine()->getRepository(User::class)->find($user);
+        $id=$u->getId();
         $liv = new Livraison();
         $com=$this->getDoctrine()->getRepository(Commande::class)->find($idcommande);
         $liv->setIdcommande($com);
-        $liv->setIdUser($u);
+        $liv->setIdUser($id);
 
 
         $em = $this->getDoctrine()->getManager();

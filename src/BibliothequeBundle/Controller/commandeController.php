@@ -17,12 +17,13 @@ class commandeController extends Controller
     {
         $user=$this->getUser();
         $u=$this->getDoctrine()->getRepository(User::class)->find($user);
+        $id=$u->getId();
         $com = new Commande();
         $com->setDatecommande(new \DateTime('now'));
         $livre=$this->getDoctrine()->getRepository(Livre::class)->find($idlivre);
         $livre->setQuantitelivre($livre->getQuantitelivre()-1);
         $com->setIdlivre($livre);
-        $com->setIdUser($u);
+        $com->setIdUser($id);
         $com->setCommandepaye(0);
 
             $em = $this->getDoctrine()->getManager();

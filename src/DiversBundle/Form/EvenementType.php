@@ -13,7 +13,7 @@ class EvenementType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('date')->add('description')->add('idEnseignant');
+        $builder->add('date')->add('description')->add('nomevent')->add('idEnseignant');
     }/**
      * {@inheritdoc}
      */

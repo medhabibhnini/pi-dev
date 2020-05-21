@@ -22,12 +22,9 @@ class Livraison
     private $idlivraison;
 
     /**
-     * @var \User
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="id_user", type="integer", nullable=false)
      */
     private $idUser;
 
@@ -57,11 +54,11 @@ class Livraison
     /**
      * Set idUser
      *
-     * @param \MyBundle\Entity\User $idUser
+     * @param integer $idUser
      *
      * @return Livraison
      */
-    public function setIdUser(\MyBundle\Entity\User $idUser = null)
+    public function setIdUser($idUser)
     {
         $this->idUser = $idUser;
 
@@ -71,7 +68,7 @@ class Livraison
     /**
      * Get idUser
      *
-     * @return \MyBundle\Entity\User
+     * @return integer
      */
     public function getIdUser()
     {
@@ -85,7 +82,7 @@ class Livraison
      *
      * @return Livraison
      */
-    public function setIdcommande(\MyBundle\Entity\Commande $idcommande = null)
+    public function setIdcommande($idcommande)
     {
         $this->idcommande = $idcommande;
 

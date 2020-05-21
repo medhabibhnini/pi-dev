@@ -22,14 +22,12 @@ class Commande
     private $idcommande;
 
     /**
-     * @var \User
+     * @var integer
      *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
-     * })
+     * @ORM\Column(name="id_user", type="integer", nullable=false)
      */
     private $idUser;
+
 
     /**
      * @var \Livre
@@ -103,11 +101,11 @@ class Commande
     /**
      * Set idUser
      *
-     * @param \MyBundle\Entity\User $idUser
+     * @param integer $idUser
      *
      * @return Commande
      */
-    public function setIdUser(\MyBundle\Entity\User $idUser = null)
+    public function setIdUser($idUser)
     {
         $this->idUser = $idUser;
 
@@ -117,7 +115,7 @@ class Commande
     /**
      * Get idUser
      *
-     * @return \MyBundle\Entity\User
+     * @return integer
      */
     public function getIdUser()
     {
@@ -131,7 +129,7 @@ class Commande
      *
      * @return Commande
      */
-    public function setIdlivre(\MyBundle\Entity\Livre $idlivre = null)
+    public function setIdlivre($idlivre)
     {
         $this->idlivre = $idlivre;
 

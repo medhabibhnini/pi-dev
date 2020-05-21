@@ -41,7 +41,7 @@ class LivreController extends Controller
 
     public function editAction(Request $request,$idlivre)
     {
-        $livre = new Livre();
+
         $formation=$this->getDoctrine()->getRepository(Livre::class)->find($idlivre);
 
         $form = $this->createForm(LivreType::class,$formation);

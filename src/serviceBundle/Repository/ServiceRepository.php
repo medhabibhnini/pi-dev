@@ -27,4 +27,12 @@ class ServiceRepository extends \Doctrine\ORM\EntityRepository
             ->createQuery("select s from MyBundle:Service s WHERE s.idUser='$user'");
         return $query->getResult();
     }
+    public function findService(){
+        $em = $this->getEntityManager();
+        $query = $em->createQuery("SELECT c.ids,c.description,c.date,u.ida,u.typea
+                            FROM MyBundle:attestation u JOIN MyBundle:Service c WITH u.ida = c.ida
+                            ");
+        if(count($query->getArrayResult()) > 0) return $query->getResult();
+        return null;
+    }
 }

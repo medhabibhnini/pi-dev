@@ -9,8 +9,11 @@ use MyBundle\Entity\Commentaire;
 use MyBundle\Entity\Publication;
 use MyBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use CMEN\GoogleChartsBundle\GoogleCharts\Charts\PieChart;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class ForumController extends Controller
 {
@@ -67,6 +70,7 @@ class ForumController extends Controller
         }
 
         $list=$this->getDoctrine()->getRepository(Publication::class)->findAll();
+
         $list1=$this->getDoctrine()->getRepository(Commentaire::class)->findAll();
         return $this->render('@Forum/Publication/addPublication.html.twig',array(
             'form'=>$form->createView(),
@@ -75,6 +79,77 @@ class ForumController extends Controller
             'u'=>$u
         ));
     }
+
+    public function AjouterPubMobileAction(Request $request) {
+        $pub = new Publication();
+
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository(User::class)->find($request->get("idUser"));
+        $pub->setIdUser($user);
+        $pub->setTypep($request->get("type"));
+        $pub->setDescriptionp($request->get("description"));
+        $date=new \DateTime();
+        $pub->setDatep($date);
+        $em->persist($pub);
+        $em->flush();
+        return new JsonResponse("ok");
+    }
+
+    public function SupprimerPubMobileAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $p = $em->getRepository(Publication::class)->find($request->get("idPub"));
+        $em->remove($p);
+        $em->flush();
+        return new JsonResponse("ok");
+    }
+
+    public function SupprimerComMobileAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $p = $em->getRepository(Commentaire::class)->find($request->get("idCom"));
+        $em->remove($p);
+        $em->flush();
+        return new JsonResponse("ok");
+    }
+
+    public function AfficherComPubMobileAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $p = $em->getRepository(Commentaire::class)->findBy(array('idpublication' => $request->get("idPub")));
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $data = $serializer->normalize($p);
+        return new JsonResponse($data);
+    }
+
+
+    public function AfficherPubMobileAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $p = $em->getRepository(Publication::class)->findAll();
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $data = $serializer->normalize($p);
+        return new JsonResponse($data);
+    }
+
+
+    public function AjouterComMobileAction(Request $request) {
+        $pub = new Commentaire();
+        $em = $this->getDoctrine()->getManager();
+        $user = $em->getRepository(User::class)->find($request->get("idUser"));
+        $pub->setIdUser($user);
+        $pub->setDescriptionc($request->get("description"));
+        $publication = $em->getRepository(Publication::class)->find($request->get("idPub"));
+        $pub->setIdpublication($publication->getId());
+        $date=new \DateTime();
+        $pub->setDatec($date);
+
+        $em->persist($pub);
+        $em->flush();
+        return new JsonResponse("ok");
+    }
+
+
     public function deleteAction($id)
     {
         $user=$this->getUser();
@@ -85,14 +160,14 @@ class ForumController extends Controller
 
         $u=$this->getDoctrine()->getRepository(User::class)->find($user);
         $u->setNbp($u->getNbp()-1);
-       $pub=$this->getDoctrine()->getRepository(Publication::class)->find($id);
-       if($pub->getIdUser() == $u) {
+        $pub=$this->getDoctrine()->getRepository(Publication::class)->find($id);
+        if($pub->getIdUser() == $u) {
 
-           $em = $this->getDoctrine()->getManager();
-           $em->persist($u);
-           $em->remove($pub);
-           $em->flush();
-       }
+            $em = $this->getDoctrine()->getManager();
+            $em->persist($u);
+            $em->remove($pub);
+            $em->flush();
+        }
         return $this->redirectToRoute('publication_addPublication');
 
     }
@@ -133,14 +208,14 @@ class ForumController extends Controller
         $comm=$this->getDoctrine()->getRepository(Commentaire::class)->findBy(array('idpublication'=>$id));
 
 
-            foreach ($comm as $c)
-                $em->remove($c);
+        foreach ($comm as $c)
+            $em->remove($c);
 
 
 
-             $em->persist($userpost);
-            $em->remove($pub);
-            $em->flush();
+        $em->persist($userpost);
+        $em->remove($pub);
+        $em->flush();
 
         return $this->redirectToRoute('publication_affiche');
 
@@ -176,7 +251,7 @@ class ForumController extends Controller
 
         if($user->getUsername()!="Admin")
         {
-           return $this->redirect("http://localhost/pi-dev/web/app_dev.php/login");
+            return $this->redirect("http://localhost/pi-dev/web/app_dev.php/login");
         }
         $em=$this->getDoctrine()->getRepository(Publication::class)->findAll();
 

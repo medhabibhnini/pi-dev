@@ -36,6 +36,7 @@ class AppKernel extends Kernel
             new ForumBundle\ForumBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
             new FOS\MessageBundle\FOSMessageBundle(),
+            new MobileBundle\MobileBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {

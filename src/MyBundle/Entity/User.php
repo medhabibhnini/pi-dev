@@ -10,6 +10,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * @ORM\Entity
  * @ORM\Table(name="fos_user")
+ * @ORM\Entity(repositoryClass="BibliothequeBundle\Repository\BibliothequeRepository")
  */
 class User extends BaseUser implements ParticipantInterface
 {
@@ -29,7 +30,7 @@ class User extends BaseUser implements ParticipantInterface
     /**
      * @var integer
      *
-     * @ORM\Column(name="nbp", type="integer", nullable=false)
+     * @ORM\Column(name="nbp", type="integer", nullable=true)
      */
     private $nbp;
     /**
@@ -395,4 +396,21 @@ class User extends BaseUser implements ParticipantInterface
     {
         return $this->nbp;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
+     * @param mixed $id
+     */
+    public function setId($id)
+    {
+        $this->id = $id;
+    }
+
 }

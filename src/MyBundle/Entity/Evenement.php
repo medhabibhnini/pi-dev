@@ -27,6 +27,12 @@ class Evenement
      * @ORM\Column(name="date", type="datetime")
      */
     private $date;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="nomevent", type="string", length=255)
+     */
+    private $nomevent;
 
     /**
      * @var string
@@ -68,6 +74,22 @@ class Evenement
         $this->date = $date;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getNomevent()
+    {
+        return $this->nomevent;
+    }
+
+    /**
+     * @param string $nomevent
+     */
+    public function setNomevent($nomevent)
+    {
+        $this->nomevent = $nomevent;
     }
 
     /**

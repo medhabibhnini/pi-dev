@@ -13,6 +13,7 @@ imports:
     - { resource: "@OneSignalBundle/Resources/config/services.yml" }
     - { resource: "@BlogBundle/Resources/config/services.yml" }
     - { resource: "@ForumBundle/Resources/config/services.yml" }
+    - { resource: "@MobileBundle/Resources/config/services.yml" }
 
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -141,3 +142,4 @@ fos_message:
     db_driver: orm
     thread_class: MyBundle\Entity\Thread
     message_class: MyBundle\Entity\Message
+

@@ -10,4 +10,12 @@ namespace MyBundle\Repository;
  */
 class attestationRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function findattestation(){
+        $em = $this->getEntityManager();
+        $query = $em->createQuery("SELECT u.langue,u.typea
+                            FROM MyBundle:attestation u 
+                            ");
+        if(count($query->getArrayResult()) > 0) return $query->getResult();
+        return null;
+    }
 }

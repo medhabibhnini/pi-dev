@@ -28,6 +28,14 @@ class Livre
     private $idlivre;
 
     /**
+     * @param int $idlivre
+     */
+    public function setIdlivre($idlivre)
+    {
+        $this->idlivre = $idlivre;
+    }
+
+    /**
      * @var string
      * @Assert\NotBlank
      * @ORM\Column(name="nomlivre", type="string", length=255, nullable=false)
@@ -49,9 +57,9 @@ class Livre
     private $datelivre;
 
     /**
-     * @var float
+     * @var integer
      * @Assert\NotBlank
-     * @ORM\Column(name="prixlivre", type="float", precision=10, scale=0, nullable=false)
+     * @ORM\Column(name="prixlivre", type="integer", precision=10, scale=0, nullable=false)
      */
     private $prixlivre;
 
@@ -85,12 +93,7 @@ class Livre
      */
     private $imageName;
 
-    /**
-     * @ORM\Column(type="datetime")
-     *
-     * @var \DateTime
-     */
-    private $updatedAt;
+
 
 
     /**
@@ -110,7 +113,7 @@ class Livre
         if (null !== $imageFile) {
             // It is required that at least one field changes if you are using doctrine
             // otherwise the event listeners won't be called and the file is lost
-            $this->updatedAt = new \DateTimeImmutable();
+            //$this->updatedAt = new \DateTimeImmutable();
         }
     }
 
@@ -131,29 +134,9 @@ class Livre
 
 
 
-    /**
-     * Set updatedAt
-     *
-     * @param \DateTime $updatedAt
-     *
-     * @return Livre
-     */
-    public function setUpdatedAt($updatedAt)
-    {
-        $this->updatedAt = $updatedAt;
 
-        return $this;
-    }
 
-    /**
-     * Get updatedAt
-     *
-     * @return \DateTime
-     */
-    public function getUpdatedAt()
-    {
-        return $this->updatedAt;
-    }
+
 
 
 
@@ -274,7 +257,7 @@ class Livre
     /**
      * Get prixlivre
      *
-     * @return float
+     * @return integer
      */
     public function getPrixlivre()
     {

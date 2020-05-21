@@ -12,7 +12,8 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
-
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 
 class BlogController extends Controller
@@ -95,6 +96,16 @@ class BlogController extends Controller
             're'=>$blogs
 
         ));
+    }
+
+    public function affichageMobileAction()
+    {
+        $em = $this->getDoctrine()->getManager();
+        $p = $em->getRepository(Blog::class)->findAll();
+
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $data = $serializer->normalize($p);
+        return new JsonResponse($data);
     }
 
     public function affichageBAction()
